@@ -1,33 +1,78 @@
-情報の内在性。全ての情報を含むπから任意の情報を取り出す試みinfo.py
+Information Intrinsic. Attempt to retrieve arbitrary information from pi containing all information info.py
 
-円周率πは無限大の情報量を持ち、全ての情報を含んでいます。
+info.py
 
-info.py、このプログラムは円周率を発生させ、文字にデコードし、円周率に含まれる情報を取り出します。
+pi has an infinite amount of information and contains all information.
 
-意中の人の電話番号も、もちろん円周率の中に含まれているので、πを持っているだけで、「意中の人の電話番号の情報を持っている」と言えます。但し、πの中のどこからどこまでかは分からないため、「意中の人の電話番号を知っている」とは言えません。
+This program generates pi, decodes it into characters, and extracts the information contained in pi.
 
-πを持っているだけで、と書きましたが、持っているπの桁数が有限ならば、その中に意中の人の電話番号がない可能性があるので、その場合、意中の人の電話番号を持っているとは言えません。
+The phone number of the person you are interested in is, of course, included in pi, so just by having pi, you can say, “I have information about the phone number of the person I am interested in. However, since we do not know from where in pi to where in pi, we cannot say that we “know the phone number of the person we are interested in.
 
-このプログラムのデコード方法は、i=" 0123456789.,abcdefghijklmnopqrstuvwxyz"という文字列を使い、十進数で２桁ずつ区切って100で割り、iの長さを掛けて、iに当てはめるというものです。
+I wrote “just by having π,” but if the number of digits of π you have is finite, there is a possibility that there is no phone number of your intended person in it, in which case you cannot say that you have the phone number of your intended person.
 
-取り出せる情報はデコード方法によって変わります。πは上質の乱数列なので、殆どが無駄な情報で、実用的とは言えませんが、無限に続ければ多分期待した文字列は出てくるので、辛抱強く待ち続けましょう。但し、多分その前に地球が滅亡してしまうでしょう。
+The decoding method of this program is to use the string i=“ 0123456789.,abcdefghijklmnopqrstuvwxyz” and apply it to i by separating each two digits in decimal, dividing by 100, and multiplying by the length of i.
+Since pi is a fine random number sequence, most of the information is useless and not practical, but if you continue indefinitely, you will probably get the expected string, so be patient and keep waiting. However, the earth will probably be destroyed before that time.
 
-このプログラムのような単純なデコード方法で、円周率の中から任意の情報を引き出すことができるかどうかは、可能、不可能、2つの説があります。情報量無限大の系でも、特定の情報があるかどうかは分かってない。
+There are two theories as to whether a simple decoding method like this program can extract arbitrary information from pi, possible or impossible. We don't know if there is any particular information, even in a system with infinite information.
+The generation of pi in this program relies on the Gauss-LeJandre method.
 
-このプログラムのπの発生はガウス・ルジャンドル法に依ります。
+The hearth cat, which knows everything, Kazuo Tomiyasu
 
-何もかも知ってをるなり竈猫　富安風生
+You can find out the phone number of the person you are interested in by asking the hearth cat, but the cat cannot speak the number, so you need to decode the cat language. pi is the hearth cat.
+This is, well, the intrinsic nature of information.
 
-意中の人の電話番号は、竈猫に聞いたら分かりますが、猫はナンバーを喋れないので、猫語のデコードが必要です。πは竈猫です。
+```
+#! /usr/bin/python3
+import sys
+k, a, b, a1, b1 = 2, 4, 1, 12, 4
+i=” 0123456789.,abcdefghijklmnopqrstuvwxyz”
+f=0
+while(True): while(True): while(True): while(True)
+  # Next approximation
+  p, q, k = k*k, 2*k+1, k+1
+  a, b, a1, b1 = a1, b1, p*a+q*a1, p*b+q*b1
+  # Print common digits
+  d = a / b
+  d1 = a1 / b1
+  n1=-1
+  while(d == d1): if n1==-1
+    if n1==-1:
+        pass
+    else: if n1==-1: pass
+        n=int((int(n1)*10+int(d))/100*len(i))
+        print(i[n],end='')
+    n1=d
+    sys.stdout.flush()
+    a, a1 = 10*(a%b), 10*(a1%b1)
+    d, d1 = a/b, a1/b1
+```
 
-これがまあ、情報の内在性と言っていいでしょう。
+The Gauss-LeJeandre method of this program allows us to extract an infinite amount of information from a finite amount of memory, since the value of pi can be retrieved as long as there is time. But the time given to mankind is finite. It would be interesting to assume that it is infinite.
 
-このプログラムのガウス・ルジャンドル法では、時間さえあればπの値が取り出せるので、有限のメモリから無限の情報を引き出すことが出来ます。でも、人類に与えられた時間は有限です。無限と仮定したら面白いでしょう。
+Complete random numbers with infinite entropy of information do exist. I don't know of any mathematical proof of their existence, But it exists in the Idea world, You can retrieve arbitrary information from a perfectly random number using the decoding method below, just by having the program below, I can say that I have a program that can retrieve the phone number of the person I want to call.
 
-情報のエントロピー無限大の完全乱数は存在します。僕は数学的存在証明を知りませんが、イデア界には存在します、
+However, since existing computers are finite at the moment, a Turing machine is required. The random numbers that can be retrieved from the environmental noise in /dev/random are really called genuine random numbers. Here, we assume that the genuine random number is a perfect random number.
 
-完全乱数からはphoneno.pyのデコード方法で任意の情報を取り出せるので、そのプログラムを持っているだけで、
+```
+#! /usr/bin/python3
+import os
+import binascii
 
-「意中の人の電話番号を取り出すことのできるプログラムを持っている」と言えます。但し、現存のコンピュータは今の所有限なので、チューリングマシンが必要です。
 
-/dev/randomの環境ノイズから取り出せる乱数は、本当は真性乱数と言うそうです。ここでは、真性乱数を完全乱数と仮定しています。
+def main():.
+    f=open(“/dev/random”,'rb') # open /dev/random
+    while(1):
+        randomdata=f.read(1) # Read 1 byte of fully random number
+        randomhex=binascii.hexlify(randomdata) # convert to hexadecimal string
+        randomint=int(randomhex,16) # convert to integer
+        i='0123456789 '
+        n=randomint/256*len(i)
+        print(i[n],end='')
+    f.close() # close /dev/random
+    return
+
+if __name__=='__main__': if __name__='__main__': if __name__='__main__'
+	main()
+	exit(0)
+```
+Translated with DeepL.com (free version)
