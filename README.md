@@ -22,12 +22,12 @@ You can find out the phone number of the person you are interested in by asking 
 This is, well, the intrinsic nature of information.
 
 ```
-#! /usr/bin/python3
+#!/usr/bin/python3
 import sys
 k, a, b, a1, b1 = 2, 4, 1, 12, 4
-i=” 0123456789.,abcdefghijklmnopqrstuvwxyz”
+i=" 0123456789.,abcdefghijklmnopqrstuvwxyz"
 f=0
-while(True): while(True): while(True): while(True)
+while(True):
   # Next approximation
   p, q, k = k*k, 2*k+1, k+1
   a, b, a1, b1 = a1, b1, p*a+q*a1, p*b+q*b1
@@ -35,16 +35,17 @@ while(True): while(True): while(True): while(True)
   d = a / b
   d1 = a1 / b1
   n1=-1
-  while(d == d1): if n1==-1
+  while(d == d1):
     if n1==-1:
         pass
-    else: if n1==-1: pass
+    else:
         n=int((int(n1)*10+int(d))/100*len(i))
         print(i[n],end='')
     n1=d
     sys.stdout.flush()
     a, a1 = 10*(a%b), 10*(a1%b1)
     d, d1 = a/b, a1/b1
+
 ```
 
 The Gauss-LeJeandre method of this program allows us to extract an infinite amount of information from a finite amount of memory, since the value of pi can be retrieved as long as there is time. But the time given to mankind is finite. It would be interesting to assume that it is infinite.
@@ -54,25 +55,27 @@ Complete random numbers with infinite entropy of information do exist. I don't k
 However, since existing computers are finite at the moment, a Turing machine is required. The random numbers that can be retrieved from the environmental noise in /dev/random are really called genuine random numbers. Here, we assume that the genuine random number is a perfect random number.
 
 ```
-#! /usr/bin/python3
+#!/usr/bin/python3
 import os
 import binascii
 
 
-def main():.
-    f=open(“/dev/random”,'rb') # open /dev/random
+def main():
+    f=open("/dev/random",'rb') # /dev/randomを開く
     while(1):
-        randomdata=f.read(1) # Read 1 byte of fully random number
-        randomhex=binascii.hexlify(randomdata) # convert to hexadecimal string
-        randomint=int(randomhex,16) # convert to integer
+        randomdata=f.read(1) # 1バイトの完全乱数の読み出し
+        randomhex=binascii.hexlify(randomdata) #１６進の文字列に変換
+        randomint=int(randomhex,16) # 整数に変換
         i='0123456789 '
         n=randomint/256*len(i)
         print(i[n],end='')
-    f.close() # close /dev/random
+    f.close() # /dev/randomを閉じる
     return
 
-if __name__=='__main__': if __name__='__main__': if __name__='__main__'
+if __name__=='__main__':
 	main()
 	exit(0)
+
+
 ```
 Translated with DeepL.com (free version)
