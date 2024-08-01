@@ -61,15 +61,15 @@ import binascii
 
 
 def main():
-    f=open("/dev/random",'rb') # /dev/randomを開く
+    f=open("/dev/random",'rb') # open /dev/random
     while(1):
-        randomdata=f.read(1) # 1バイトの完全乱数の読み出し
-        randomhex=binascii.hexlify(randomdata) #１６進の文字列に変換
-        randomint=int(randomhex,16) # 整数に変換
+        randomdata=f.read(1) # read 1 byte of complete random number.
+        randomhex=binascii.hexlify(randomdata) # translate to hexadecimal
+        randomint=int(randomhex,16) # translate to integer
         i='0123456789 '
         n=randomint/256*len(i)
         print(i[n],end='')
-    f.close() # /dev/randomを閉じる
+    f.close() # close /dev/random
     return
 
 if __name__=='__main__':
